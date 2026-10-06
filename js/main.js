@@ -1018,43 +1018,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/* === LEARN MORE SCROLL FINAL START === */
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    const learnMore = document.querySelector(
-        '.hero__actions a[href="#about-center"]'
-    );
 
-    const target = document.querySelector("#about-center");
 
-    if (!learnMore || !target) return;
+/* === INTERNAL ANCHOR SCROLL FINAL START === */
 
-    learnMore.addEventListener("click", (event) => {
+document.addEventListener("click", (event) => {
 
-        event.preventDefault();
+    const link = event.target.closest('a[href^="#"]');
 
-        const header = document.querySelector(".header");
-        const headerHeight = header
-            ? header.getBoundingClientRect().height
-            : 0;
+    if (!link) return;
 
-        const extraGap = window.innerWidth <= 820 ? 12 : 20;
+    const href = link.getAttribute("href");
 
-        const targetTop =
-            target.getBoundingClientRect().top +
-            window.pageYOffset -
-            headerHeight -
-            extraGap;
+    if (!href || href === "#") return;
 
-        window.scrollTo({
-            top: targetTop,
-            behavior: "smooth"
-        });
+    const target = document.querySelector(href);
 
+    if (!target) return;
+
+    event.preventDefault();
+
+    /* закрываем мобильное меню */
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav");
+
+    if (burger) burger.classList.remove("active");
+    if (nav) nav.classList.remove("active");
+
+    document.body.classList.remove("menu-open");
+
+    /* учитываем фиксированную шапку */
+    const header = document.querySelector(".header");
+
+    const headerHeight = header
+        ? header.getBoundingClientRect().height
+        : 0;
+
+    const extraGap = window.innerWidth <= 820 ? 12 : 18;
+
+    const y =
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight -
+        extraGap;
+
+    window.scrollTo({
+        top: Math.max(0, y),
+        behavior: "smooth"
     });
 
-});
+}, true);
 
-/* === LEARN MORE SCROLL FINAL END === */
+/* === INTERNAL ANCHOR SCROLL FINAL END === */
 
