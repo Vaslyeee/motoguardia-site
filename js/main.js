@@ -1179,3 +1179,47 @@ document.addEventListener("click", (event) => {
 
 /* === FINAL SITE NAVIGATION END === */
 
+
+/* === MANIFESTO WORD WRAP FIX START === */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const lines = document.querySelectorAll(".manifesto-final__line");
+
+    lines.forEach((line) => {
+
+        const chars = Array.from(
+            line.querySelectorAll(".manifesto-final__char")
+        );
+
+        if (!chars.length) return;
+
+        let currentWord = null;
+
+        chars.forEach((char) => {
+
+            const isSpace =
+                char.classList.contains("manifesto-final__space") ||
+                char.textContent.trim() === "";
+
+            if (isSpace) {
+                currentWord = null;
+                return;
+            }
+
+            if (!currentWord) {
+                currentWord = document.createElement("span");
+                currentWord.className = "manifesto-final__word";
+
+                line.insertBefore(currentWord, char);
+            }
+
+            currentWord.appendChild(char);
+        });
+
+    });
+
+});
+
+/* === MANIFESTO WORD WRAP FIX END === */
+

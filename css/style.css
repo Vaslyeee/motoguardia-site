@@ -11551,3 +11551,17 @@ html {
 
 /* === FINAL CLICK LAYERS END === */
 
+
+/* === MANIFESTO WORD WRAP FIX === */
+
+.manifesto-final__word {
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+
+.manifesto-final__line {
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+}
+
