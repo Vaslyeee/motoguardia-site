@@ -980,3 +980,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* === MOBILE DIRECTION TAP FIX END === */
 
+
+/* =========================================================
+   MOBILE DIRECTIONS — DESCRIPTION CONTENT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const descriptions = {
+        "ПЕРЕСЕЧЁННАЯ МЕСТНОСТЬ":
+            "Отрабатываем управление на грунте, песке, колее, подъёмах и спусках. Развиваем баланс, контроль тяги и уверенное управление на нестабильном покрытии.",
+
+        "ГОРОДСКАЯ ПОДГОТОВКА":
+            "Тренируем движение в плотном потоке, маневрирование, выбор безопасной траектории и дистанции. Учимся быстро оценивать дорожную обстановку и действовать уверенно в реальных городских условиях.",
+
+        "КОНТРАВАРИЙНАЯ ПОДГОТОВКА":
+            "Отрабатываем экстренное торможение, объезд препятствий и стабилизацию мотоцикла. Разбираем действия при резком изменении обстановки и учимся сохранять контроль в критических ситуациях.",
+
+        "ТРЕНЕРСКАЯ ПРОГРАММА":
+            "Готовим инструкторов по системе Tactical Ride: методика проведения занятий, постановка упражнений, контроль техники, разбор ошибок и безопасная работа с группой."
+    };
+
+    document.querySelectorAll(".direction-card").forEach(card => {
+
+        if (card.querySelector(".mobile-direction-description")) return;
+
+        const heading =
+            card.querySelector("h2, h3, h4, .direction-card__title");
+
+        if (!heading) return;
+
+        const title = heading.textContent
+            .replace(/\s+/g, " ")
+            .trim()
+            .toUpperCase();
+
+        const description = descriptions[title];
+
+        if (!description) return;
+
+        const p = document.createElement("p");
+
+        p.className = "mobile-direction-description";
+        p.textContent = description;
+
+        card.appendChild(p);
+    });
+
+});
+
