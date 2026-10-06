@@ -11051,3 +11051,22 @@ main > section.section {
     }
 }
 
+
+/* =========================================================
+   MOBILE MENU — GAP 6PX + FONT 17PX
+========================================================= */
+
+@media (max-width: 820px) {
+
+  .header .nav,
+  .nav {
+    gap: 6px !important;
+  }
+
+  .header .nav a,
+  .nav a {
+    font-size: 17px !important;
+  }
+
+}
+
