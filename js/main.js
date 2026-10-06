@@ -981,50 +981,37 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === MOBILE DIRECTION TAP FIX END === */
 
 
+
+
 /* =========================================================
-   MOBILE DIRECTIONS — DESCRIPTION CONTENT
+   MOBILE DIRECTIONS — DESCRIPTION FINAL
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const descriptions = {
-        "ПЕРЕСЕЧЁННАЯ МЕСТНОСТЬ":
-            "Отрабатываем управление на грунте, песке, колее, подъёмах и спусках. Развиваем баланс, контроль тяги и уверенное управление на нестабильном покрытии.",
+    const cards = [...document.querySelectorAll(".direction-card")];
 
-        "ГОРОДСКАЯ ПОДГОТОВКА":
-            "Тренируем движение в плотном потоке, маневрирование, выбор безопасной траектории и дистанции. Учимся быстро оценивать дорожную обстановку и действовать уверенно в реальных городских условиях.",
+    const descriptions = [
+        "Отрабатываем управление на грунте, песке, колее, подъёмах и спусках. Развиваем баланс, контроль тяги и уверенное управление на нестабильном покрытии.",
 
-        "КОНТРАВАРИЙНАЯ ПОДГОТОВКА":
-            "Отрабатываем экстренное торможение, объезд препятствий и стабилизацию мотоцикла. Разбираем действия при резком изменении обстановки и учимся сохранять контроль в критических ситуациях.",
+        "Тренируем движение в плотном потоке, маневрирование, выбор безопасной траектории и дистанции. Учимся быстро оценивать дорожную обстановку и действовать уверенно в реальных городских условиях.",
 
-        "ТРЕНЕРСКАЯ ПРОГРАММА":
-            "Готовим инструкторов по системе Tactical Ride: методика проведения занятий, постановка упражнений, контроль техники, разбор ошибок и безопасная работа с группой."
-    };
+        "Отрабатываем экстренное торможение, объезд препятствий и стабилизацию мотоцикла. Разбираем действия при резком изменении обстановки и учимся сохранять контроль в критических ситуациях.",
 
-    document.querySelectorAll(".direction-card").forEach(card => {
+        "Готовим инструкторов по системе Tactical Ride: методика проведения занятий, постановка упражнений, контроль техники, разбор ошибок и безопасная работа с группой."
+    ];
 
-        if (card.querySelector(".mobile-direction-description")) return;
+    cards.slice(0, 4).forEach((card, index) => {
 
-        const heading =
-            card.querySelector("h2, h3, h4, .direction-card__title");
+        /* удаляем старый мобильный текст, если был */
+        card.querySelectorAll(".mobile-direction-description")
+            .forEach(el => el.remove());
 
-        if (!heading) return;
+        const text = document.createElement("p");
+        text.className = "mobile-direction-description";
+        text.textContent = descriptions[index];
 
-        const title = heading.textContent
-            .replace(/\s+/g, " ")
-            .trim()
-            .toUpperCase();
-
-        const description = descriptions[title];
-
-        if (!description) return;
-
-        const p = document.createElement("p");
-
-        p.className = "mobile-direction-description";
-        p.textContent = description;
-
-        card.appendChild(p);
+        card.appendChild(text);
     });
 
 });
