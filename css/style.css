@@ -11470,3 +11470,21 @@ main > section.section {
 
 }
 
+
+/* LEARN MORE — SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+#about-center,
+#about {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 820px) {
+  #about-center,
+  #about {
+    scroll-margin-top: 78px;
+  }
+}
+
