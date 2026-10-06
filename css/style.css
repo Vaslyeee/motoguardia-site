@@ -10535,3 +10535,67 @@ main > section.section {
 
 /* === MOBILE PHOTO + DIRECTION TAP FIX END === */
 
+
+/* =========================================================
+   MOBILE HEADINGS — FINAL SIZE FIX
+========================================================= */
+
+@media (max-width: 820px) {
+
+  .section-title,
+  .education h2,
+  .team h2,
+  .opportunities h2,
+  .about-center__title,
+  .training h2,
+  .directions h2 {
+    font-size: clamp(
+      30px,
+      calc(9vw - 2px),
+      42px
+    ) !important;
+
+    line-height: 1.04 !important;
+    max-width: 100% !important;
+  }
+
+  /* длинный заголовок команды */
+  .team h2 {
+    font-size: clamp(
+      28px,
+      8vw,
+      38px
+    ) !important;
+
+    line-height: 1.04 !important;
+    letter-spacing: -0.015em !important;
+    max-width: 100% !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .section-title,
+  .education h2,
+  .opportunities h2,
+  .about-center__title,
+  .training h2,
+  .directions h2 {
+    font-size: clamp(
+      29px,
+      calc(9vw - 2px),
+      40px
+    ) !important;
+  }
+
+  .team h2 {
+    font-size: clamp(
+      27px,
+      7.8vw,
+      35px
+    ) !important;
+  }
+}
+
