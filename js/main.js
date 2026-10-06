@@ -1180,46 +1180,145 @@ document.addEventListener("click", (event) => {
 /* === FINAL SITE NAVIGATION END === */
 
 
-/* === MANIFESTO WORD WRAP FIX START === */
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    const lines = document.querySelectorAll(".manifesto-final__line");
 
-    lines.forEach((line) => {
 
-        const chars = Array.from(
-            line.querySelectorAll(".manifesto-final__char")
-        );
+/* === MANIFESTO RUSSIAN TYPOGRAPHY START === */
 
-        if (!chars.length) return;
+window.addEventListener("load", () => {
 
-        let currentWord = null;
+    const noBreakWords = new Set([
+        "и", "а", "но",
+        "в", "во",
+        "с", "со",
+        "к", "ко",
+        "у",
+        "о", "об", "обо",
+        "от", "ото",
+        "до",
+        "по",
+        "за",
+        "из", "изо",
+        "без",
+        "для",
+        "под", "подо",
+        "над", "надо",
+        "при",
+        "про",
+        "не", "ни"
+    ]);
 
-        chars.forEach((char) => {
+    document
+        .querySelectorAll(".manifesto-final__line")
+        .forEach((line) => {
 
-            const isSpace =
-                char.classList.contains("manifesto-final__space") ||
-                char.textContent.trim() === "";
+            const chars = Array.from(
+                line.querySelectorAll(".manifesto-final__char")
+            );
 
-            if (isSpace) {
-                currentWord = null;
-                return;
+            if (!chars.length) return;
+
+            /*
+             * Пересобираем строку из уже существующих span-букв.
+             * Поэтому анимация каждой буквы сохраняется.
+             */
+
+            const words = [];
+            let current = [];
+
+            chars.forEach((char) => {
+
+                const isSpace =
+                    char.classList.contains("manifesto-final__space");
+
+                if (isSpace) {
+
+                    if (current.length) {
+                        words.push({
+                            chars: current,
+                            space: char
+                        });
+
+                        current = [];
+                    }
+
+                } else {
+                    current.push(char);
+                }
+
+            });
+
+            if (current.length) {
+                words.push({
+                    chars: current,
+                    space: null
+                });
             }
 
-            if (!currentWord) {
-                currentWord = document.createElement("span");
-                currentWord.className = "manifesto-final__word";
+            if (!words.length) return;
 
-                line.insertBefore(currentWord, char);
+            line.innerHTML = "";
+
+            for (let i = 0; i < words.length; i++) {
+
+                const item = words[i];
+
+                const wordText = item.chars
+                    .map(el => el.textContent)
+                    .join("")
+                    .toLowerCase()
+                    .replace(/[.,!?;:—–-]/g, "")
+                    .trim();
+
+                /*
+                 * Если это короткий русский предлог/союз,
+                 * объединяем его со следующим словом.
+                 */
+                if (
+                    noBreakWords.has(wordText) &&
+                    i < words.length - 1
+                ) {
+
+                    const group = document.createElement("span");
+                    group.className = "manifesto-final__nowrap";
+
+                    item.chars.forEach(el => group.appendChild(el));
+
+                    if (item.space) {
+                        group.appendChild(item.space);
+                    }
+
+                    const next = words[i + 1];
+
+                    next.chars.forEach(el => group.appendChild(el));
+
+                    line.appendChild(group);
+
+                    if (next.space) {
+                        line.appendChild(next.space);
+                    }
+
+                    i++;
+
+                    continue;
+                }
+
+                const word = document.createElement("span");
+                word.className = "manifesto-final__word";
+
+                item.chars.forEach(el => word.appendChild(el));
+
+                line.appendChild(word);
+
+                if (item.space) {
+                    line.appendChild(item.space);
+                }
             }
 
-            currentWord.appendChild(char);
         });
-
-    });
 
 });
 
-/* === MANIFESTO WORD WRAP FIX END === */
+/* === MANIFESTO RUSSIAN TYPOGRAPHY END === */
 

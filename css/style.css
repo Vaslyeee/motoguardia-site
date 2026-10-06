@@ -11565,3 +11565,18 @@ html {
     hyphens: none !important;
 }
 
+
+/* === MANIFESTO RUSSIAN TYPOGRAPHY FINAL === */
+
+.manifesto-final__word,
+.manifesto-final__nowrap {
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+
+.manifesto-final__line {
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+}
+
