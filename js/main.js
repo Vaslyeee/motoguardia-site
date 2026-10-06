@@ -1073,3 +1073,109 @@ document.addEventListener("click", (event) => {
 
 /* === INTERNAL ANCHOR SCROLL FINAL END === */
 
+
+
+/* === FINAL SITE NAVIGATION START === */
+
+(() => {
+
+    function goToSection(selector) {
+
+        const target = document.querySelector(selector);
+
+        if (!target) {
+            console.error("Не найден блок:", selector);
+            return;
+        }
+
+        const header = document.querySelector(".header");
+
+        const headerHeight = header
+            ? header.getBoundingClientRect().height
+            : 0;
+
+        const y =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight -
+            10;
+
+        document.documentElement.style.scrollBehavior = "smooth";
+
+        window.scrollTo({
+            top: Math.max(0, y),
+            behavior: "smooth"
+        });
+    }
+
+
+    document.addEventListener("click", function(event) {
+
+        const link = event.target.closest("a");
+
+        if (!link) return;
+
+        const text = (link.textContent || "")
+            .replace(/\s+/g, " ")
+            .trim()
+            .toUpperCase();
+
+        const href = link.getAttribute("href");
+
+
+        /* О ЦЕНТРЕ + УЗНАТЬ ПОДРОБНЕЕ */
+
+        if (
+            text === "О ЦЕНТРЕ" ||
+            text === "УЗНАТЬ ПОДРОБНЕЕ" ||
+            href === "#about-center"
+        ) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            const burger = document.querySelector(".burger");
+            const nav = document.querySelector(".nav");
+
+            if (burger) burger.classList.remove("active");
+            if (nav) nav.classList.remove("active");
+
+            document.body.classList.remove("menu-open");
+
+            requestAnimationFrame(() => {
+                goToSection("#about-center");
+            });
+
+            return;
+        }
+
+
+        /* ОСТАЛЬНЫЕ ЯКОРНЫЕ ССЫЛКИ */
+
+        if (href && href.startsWith("#") && href.length > 1) {
+
+            const target = document.querySelector(href);
+
+            if (!target) return;
+
+            event.preventDefault();
+
+            const burger = document.querySelector(".burger");
+            const nav = document.querySelector(".nav");
+
+            if (burger) burger.classList.remove("active");
+            if (nav) nav.classList.remove("active");
+
+            document.body.classList.remove("menu-open");
+
+            requestAnimationFrame(() => {
+                goToSection(href);
+            });
+        }
+
+    }, true);
+
+})();
+
+/* === FINAL SITE NAVIGATION END === */
+

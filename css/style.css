@@ -11519,3 +11519,35 @@ html {
   pointer-events: none !important;
 }
 
+
+
+/* === FINAL CLICK LAYERS START === */
+
+.hero__content,
+.hero__actions,
+.header,
+.header__inner,
+.nav {
+    position: relative;
+    z-index: 100;
+}
+
+.hero__actions a,
+.nav a,
+.header a {
+    position: relative;
+    z-index: 110;
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+.hero__video,
+.hero video,
+.hero__overlay,
+.hero::before,
+.hero::after {
+    pointer-events: none !important;
+}
+
+/* === FINAL CLICK LAYERS END === */
+
