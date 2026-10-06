@@ -11433,3 +11433,15 @@ main > section.section {
   }
 }
 
+
+/* MOBILE MENU — GAP 20PX */
+@media (max-width: 820px) {
+
+  .header .nav,
+  .nav {
+    gap: 20px !important;
+    row-gap: 20px !important;
+  }
+
+}
+
