@@ -1016,3 +1016,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
+
+/* === LEARN MORE SCROLL FINAL START === */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const learnMore = document.querySelector(
+        '.hero__actions a[href="#about-center"]'
+    );
+
+    const target = document.querySelector("#about-center");
+
+    if (!learnMore || !target) return;
+
+    learnMore.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        const header = document.querySelector(".header");
+        const headerHeight = header
+            ? header.getBoundingClientRect().height
+            : 0;
+
+        const extraGap = window.innerWidth <= 820 ? 12 : 20;
+
+        const targetTop =
+            target.getBoundingClientRect().top +
+            window.pageYOffset -
+            headerHeight -
+            extraGap;
+
+        window.scrollTo({
+            top: targetTop,
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+/* === LEARN MORE SCROLL FINAL END === */
+
