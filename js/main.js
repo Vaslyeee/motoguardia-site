@@ -918,3 +918,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+
+
+/* === MOBILE DIRECTION TAP FIX START === */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cards = Array.from(
+        document.querySelectorAll(".direction-card")
+    );
+
+    if (!cards.length) return;
+
+    const isMobile = () =>
+        window.matchMedia("(max-width: 820px), (hover: none)").matches;
+
+    cards.forEach((card) => {
+
+        card.addEventListener("click", (event) => {
+
+            if (!isMobile()) return;
+
+            const wasOpen = card.classList.contains("mobile-open");
+
+            cards.forEach((otherCard) => {
+                otherCard.classList.remove("mobile-open");
+            });
+
+            if (!wasOpen) {
+                card.classList.add("mobile-open");
+            }
+
+            event.stopPropagation();
+        });
+
+    });
+
+    document.addEventListener("click", (event) => {
+
+        if (!isMobile()) return;
+
+        if (!event.target.closest(".direction-card")) {
+            cards.forEach((card) => {
+                card.classList.remove("mobile-open");
+            });
+        }
+
+    });
+
+    window.addEventListener("resize", () => {
+
+        if (!isMobile()) {
+            cards.forEach((card) => {
+                card.classList.remove("mobile-open");
+            });
+        }
+
+    });
+
+});
+
+/* === MOBILE DIRECTION TAP FIX END === */
+

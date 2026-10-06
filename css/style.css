@@ -10242,3 +10242,296 @@ main > section.section {
     }
 }
 
+
+
+/* === MOBILE PHOTO + DIRECTION TAP FIX START === */
+
+@media (max-width: 820px) {
+
+    /* ===== Tactical Ride photo =====
+       Убираем искусственную высоту, из-за которой был пустой низ.
+    */
+    .training-photo {
+        height: auto !important;
+        min-height: 0 !important;
+        aspect-ratio: auto !important;
+        overflow: hidden !important;
+        border-radius: 20px !important;
+    }
+
+    .training-photo img {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+        margin: 0 !important;
+        border-radius: inherit !important;
+    }
+
+    /* Направления: курсор не нужен на телефоне */
+    .direction-card {
+        cursor: pointer !important;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    /* убираем залипание браузерного hover на touch */
+    @media (hover: none) {
+        .direction-card:hover {
+            transform: none;
+        }
+    }
+
+.dark-card:hover,
+.principle:hover,
+.direction-card.mobile-open {
+
+  border-color: #9ba864;
+  box-shadow:
+    0 0 0 1px rgba(155, 168, 100, 0.18),
+    0 0 26px rgba(120, 140, 70, 0.17);
+  transform: translateY(-3px);
+
+}
+
+.direction-card.mobile-open::before {
+
+  transform: scale(1.08);
+
+}
+
+.direction-card.mobile-open {
+
+    transform: none !important;
+
+    border-color: #98a45b;
+
+    box-shadow:
+      0 0 0 1px rgba(151, 164, 91, 0.12),
+      0 0 24px rgba(126, 145, 65, 0.12);
+  
+}
+
+/* ОЛИВКОВЫЙ ФОН ПОВЕРХ ФОТО */
+
+  .direction-card.mobile-open::after {
+
+    background: linear-gradient(
+      135deg,
+      rgba(89, 99, 49, 0.94) 0%,
+      rgba(105, 116, 59, 0.91) 52%,
+      rgba(74, 82, 42, 0.94) 100%
+    );
+  
+}
+
+.direction-card.mobile-open p {
+
+    opacity: 1;
+
+    transform: translateY(0);
+  
+}
+
+.direction-card.mobile-open h3 {
+
+    transform: translateY(-4px);
+  
+}
+
+/* =====================================================
+   7. НИКАКОГО ZOOM НА ФОТОКАРТОЧКАХ
+===================================================== */
+
+.direction-card.mobile-open::before {
+
+  transform: none !important;
+
+}
+
+.direction-card.mobile-open {
+
+  transform: none !important;
+  box-shadow: none !important;
+
+}
+
+.direction-card.mobile-open::after {
+
+    background: linear-gradient(
+      135deg,
+      rgba(102, 111, 58, 0.94) 0%,
+      rgba(116, 126, 67, 0.92) 52%,
+      rgba(90, 99, 52, 0.94) 100%
+    );
+  
+}
+
+.direction-card.mobile-open .direction-card__extra {
+
+    opacity: 1;
+    visibility: visible;
+  
+}
+
+/* =====================================================
+   3. УБИРАЕМ ЛЮБЫЕ СТАРЫЕ ЭФФЕКТЫ С ЭТИХ КАРТОЧЕК
+===================================================== */
+
+.direction-card,
+.direction-card.mobile-open,
+.direction-card * {
+
+  animation: none !important;
+
+}
+
+.direction-card.mobile-open {
+
+    transform: none !important;
+
+    box-shadow: none !important;
+
+    border-color: rgba(145, 157, 82, 0.7);
+  
+}
+
+/* ФОТО НЕ УВЕЛИЧИВАЕТСЯ */
+
+  .direction-card.mobile-open::before {
+
+    transform: none !important;
+  
+}
+
+/* ПРОСТО ОЛИВКОВЫЙ СЛОЙ ПОВЕРХ ФОТО */
+
+  .direction-card.mobile-open::after {
+
+    background: linear-gradient(
+      135deg,
+      rgba(84, 94, 48, 0.94) 0%,
+      rgba(104, 114, 61, 0.92) 50%,
+      rgba(73, 82, 42, 0.95) 100%
+    );
+  
+}
+
+/* ДОП ТЕКСТ ПОЯВЛЯЕТСЯ */
+
+  .direction-card.mobile-open .direction-card__extra {
+
+    opacity: 1;
+
+    visibility: visible;
+  
+}
+
+/* ВСЁ ОСТАЛЬНОЕ ОСТАЁТСЯ СТРОГО НА МЕСТЕ */
+
+  .direction-card.mobile-open h3,
+  .direction-card.mobile-open > p {
+
+    transform: none !important;
+  
+}
+
+.direction-card.mobile-open {
+
+    transform: none !important;
+
+    box-shadow: none !important;
+
+    border-color: rgba(126, 138, 69, 0.52) !important;
+  
+}
+
+.direction-card.mobile-open::before {
+
+    transform: none !important;
+  
+}
+
+.direction-card.mobile-open::after {
+
+    background: linear-gradient(
+      135deg,
+      rgba(97, 108, 53, 0.88) 0%,
+      rgba(111, 122, 63, 0.86) 55%,
+      rgba(83, 92, 45, 0.9) 100%
+    );
+  
+}
+
+/* Старый короткий текст исчезает */
+  .direction-card.mobile-open > p {
+
+    opacity: 0;
+    visibility: hidden;
+  
+}
+
+/* Подробный появляется */
+  .direction-card.mobile-open .direction-card__extra {
+
+    opacity: 1;
+    visibility: visible;
+  
+}
+
+.direction-card.mobile-open {
+
+    transform: none !important;
+    box-shadow: none !important;
+  
+}
+
+/* Фото остаётся, но сверху появляется плотный olive */
+  .direction-card.mobile-open::after {
+
+    background: linear-gradient(
+      135deg,
+      rgba(115, 125, 64, 0.96) 0%,
+      rgba(126, 137, 70, 0.95) 50%,
+      rgba(98, 108, 54, 0.97) 100%
+    ) !important;
+  
+}
+
+/* короткая подпись исчезает */
+  .direction-card.mobile-open > p {
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+  
+}
+
+/* подробный текст появляется */
+  .direction-card.mobile-open .direction-hover-description {
+
+    opacity: 1 !important;
+    visibility: visible !important;
+  
+}
+
+/* заголовок остаётся */
+  .direction-card.mobile-open h3 {
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  
+}
+
+/* никакого zoom */
+.direction-card.mobile-open::before {
+
+  transform: none !important;
+
+}
+
+}
+
+/* === MOBILE PHOTO + DIRECTION TAP FIX END === */
+
