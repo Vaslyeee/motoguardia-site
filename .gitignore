@@ -5,3 +5,10 @@ backups/
 video/hero-original.mp4
 video/hero-125mb-backup.mp4
 video/hero-compressed.mp4
+index-old.html
+index.html.before-*
+css/style-old.css
+css/style.css.before-*
+css/css/
+js/main-old.js
+js/main.js.before-*
