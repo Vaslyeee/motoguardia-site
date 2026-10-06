@@ -11258,3 +11258,102 @@ main > section.section {
   }
 }
 
+
+/* =========================================================
+   MOBILE DIRECTIONS — MATCH DESKTOP HOVER GEOMETRY
+========================================================= */
+
+@media (max-width: 820px) {
+
+  /* размер карточки до и после тапа одинаковый */
+  .direction-card,
+  .direction-card.mobile-open {
+    height: auto !important;
+    min-height: 230px !important;
+    max-height: none !important;
+
+    transform: none !important;
+    overflow: hidden !important;
+  }
+
+  /* НЕ двигаем заголовок вообще */
+  .direction-card h2,
+  .direction-card h3,
+  .direction-card h4,
+  .direction-card .direction-card__title,
+  .direction-card.mobile-open h2,
+  .direction-card.mobile-open h3,
+  .direction-card.mobile-open h4,
+  .direction-card.mobile-open .direction-card__title {
+    position: static !important;
+
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+    translate: none !important;
+
+    margin: 0 !important;
+  }
+
+  /* сам текст не прижимаем к низу */
+  .mobile-direction-description {
+    position: static !important;
+
+    width: auto !important;
+    max-width: none !important;
+
+    margin: 18px 0 0 !important;
+    padding: 0 !important;
+
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+
+    color: #f2f1eb !important;
+    -webkit-text-fill-color: #f2f1eb !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+    display: none !important;
+  }
+
+  .direction-card.mobile-open .mobile-direction-description {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* контент карточки остаётся на месте */
+  .direction-card > * {
+    position: relative !important;
+  }
+
+  /* открытая карточка может вырасти совсем чуть-чуть,
+     только если полный текст реально не помещается */
+  .direction-card.mobile-open {
+    min-height: 245px !important;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .direction-card,
+  .direction-card.mobile-open {
+    min-height: 230px !important;
+  }
+
+  .direction-card.mobile-open {
+    min-height: 242px !important;
+  }
+
+  .mobile-direction-description {
+    margin-top: 14px !important;
+    font-size: 13px !important;
+    line-height: 1.42 !important;
+  }
+
+}
+
