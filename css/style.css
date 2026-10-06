@@ -11445,3 +11445,16 @@ main > section.section {
 
 }
 
+
+/* MOBILE DIRECTIONS — SAME DESCRIPTION SIZE ON ALL CARDS */
+@media (max-width: 820px) {
+
+  .directions-grid .direction-card .mobile-direction-description,
+  .directions-grid .direction-card.mobile-open .mobile-direction-description {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+  }
+
+}
+
