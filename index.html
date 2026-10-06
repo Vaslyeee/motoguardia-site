@@ -112,7 +112,11 @@
                         СТАТЬ УЧАСТНИКОМ
                     </a>
 
-                    <a href="#about-center" class="button button--outline">
+                    <a
+    href="#about-center"
+    class="button button--outline"
+    onclick="event.preventDefault(); const t=document.querySelector('#about-center'); const h=document.querySelector('.header'); const off=(h?h.getBoundingClientRect().height:0)+12; window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-off, behavior:'smooth'});"
+>
                         УЗНАТЬ ПОДРОБНЕЕ
                     </a>
                 </div>

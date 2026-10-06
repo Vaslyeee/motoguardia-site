@@ -11488,3 +11488,34 @@ html {
   }
 }
 
+
+/* =========================================================
+   LEARN MORE BUTTON — CLICK FIX
+========================================================= */
+
+.hero__actions {
+  position: relative !important;
+  z-index: 50 !important;
+  pointer-events: auto !important;
+}
+
+.hero__actions .button,
+.hero__actions .button--outline,
+.hero__actions a[href="#about-center"] {
+  position: relative !important;
+  z-index: 60 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* декоративные слои hero не должны ловить клики */
+.hero::before,
+.hero::after,
+.hero__media::before,
+.hero__media::after,
+.hero__overlay,
+.hero__video::before,
+.hero__video::after {
+  pointer-events: none !important;
+}
+
