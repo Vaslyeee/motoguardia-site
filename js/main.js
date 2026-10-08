@@ -1447,3 +1447,28 @@ window.addEventListener("load", () => {
 
 /* === MANIFESTO NO WORD BREAK END === */
 
+
+/* =========================================================
+   MOBILE MANIFESTO — ABSOLUTE FINAL FIX
+========================================================= */
+
+window.addEventListener("load", () => {
+
+    if (window.innerWidth > 820) return;
+
+    setTimeout(() => {
+
+        const text = document.querySelector(".manifesto-final__text");
+
+        if (!text) return;
+
+        text.innerHTML = `
+            <p class="manifesto-mobile-plain">
+                Легион Мото Гвардия создан для тех, кто стремится стать мастером управления мотоциклом, получить доступ к элитной сети единомышленников и быть готовым к любым вызовам современного мира.
+            </p>
+        `;
+
+    }, 300);
+
+});
+

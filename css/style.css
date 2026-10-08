@@ -11682,3 +11682,60 @@ html {
 
 }
 
+
+/* =========================================================
+   MOBILE MANIFESTO — PLAIN TEXT FINAL
+========================================================= */
+
+@media (max-width: 820px) {
+
+    .manifesto-final__text {
+        width: calc(100% - 16px) !important;
+        max-width: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        font-size: 29px !important;
+        line-height: 1.42 !important;
+
+        text-align: center !important;
+
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        hyphens: none !important;
+    }
+
+    .manifesto-mobile-plain {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font: inherit !important;
+        line-height: inherit !important;
+        letter-spacing: inherit !important;
+
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: normal !important;
+        hyphens: none !important;
+
+        color: #f1f1ed !important;
+        -webkit-text-fill-color: #f1f1ed !important;
+
+        text-align: center !important;
+    }
+
+}
+
+@media (max-width: 520px) {
+
+    .manifesto-final__text {
+        width: calc(100% - 12px) !important;
+        font-size: 29px !important;
+    }
+
+}
+
