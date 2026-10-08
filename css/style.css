@@ -11580,3 +11580,37 @@ html {
     hyphens: none !important;
 }
 
+
+/* === MANIFESTO NO WORD BREAK FINAL === */
+
+.manifesto-final__word,
+.manifesto-final__phrase {
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+
+.manifesto-final__line {
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+}
+
+.manifesto-final__fixed-space {
+    display: inline !important;
+    white-space: pre !important;
+}
+
+@media (max-width: 820px) {
+    .manifesto-final__text {
+        width: calc(100% - 24px) !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .manifesto-final__line {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+

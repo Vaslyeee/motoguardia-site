@@ -1322,3 +1322,128 @@ window.addEventListener("load", () => {
 
 /* === MANIFESTO RUSSIAN TYPOGRAPHY END === */
 
+
+
+/* === MANIFESTO NO WORD BREAK START === */
+
+window.addEventListener("load", () => {
+
+    const shortWords = new Set([
+        "и","а","но",
+        "в","во",
+        "с","со",
+        "к","ко",
+        "у",
+        "о","об","обо",
+        "от",
+        "до",
+        "по",
+        "за",
+        "из",
+        "для",
+        "без",
+        "под",
+        "над",
+        "при",
+        "про",
+        "не","ни"
+    ]);
+
+    document.querySelectorAll(".manifesto-final__line").forEach((line) => {
+
+        const chars = [...line.querySelectorAll(".manifesto-final__char")];
+
+        if (!chars.length) return;
+
+        const words = [];
+        let current = [];
+        let pendingSpace = null;
+
+        chars.forEach((char) => {
+
+            const isSpace =
+                char.classList.contains("manifesto-final__space") ||
+                char.textContent === "\u00a0" ||
+                char.textContent.trim() === "";
+
+            if (isSpace) {
+
+                if (current.length) {
+                    words.push({
+                        chars: current,
+                        space: char
+                    });
+                    current = [];
+                }
+
+            } else {
+                current.push(char);
+            }
+
+        });
+
+        if (current.length) {
+            words.push({
+                chars: current,
+                space: null
+            });
+        }
+
+        if (!words.length) return;
+
+        line.innerHTML = "";
+
+        for (let i = 0; i < words.length; i++) {
+
+            const item = words[i];
+
+            const cleanWord = item.chars
+                .map(el => el.textContent)
+                .join("")
+                .toLowerCase()
+                .replace(/[.,!?;:—–-]/g, "")
+                .trim();
+
+            if (shortWords.has(cleanWord) && i < words.length - 1) {
+
+                const group = document.createElement("span");
+                group.className = "manifesto-final__phrase";
+
+                item.chars.forEach(el => group.appendChild(el));
+
+                const spacer = document.createElement("span");
+                spacer.className = "manifesto-final__fixed-space";
+                spacer.innerHTML = "&nbsp;";
+                group.appendChild(spacer);
+
+                const next = words[i + 1];
+                next.chars.forEach(el => group.appendChild(el));
+
+                line.appendChild(group);
+
+                if (next.space) {
+                    line.appendChild(next.space);
+                }
+
+                i++;
+                continue;
+            }
+
+            const word = document.createElement("span");
+            word.className = "manifesto-final__word";
+
+            item.chars.forEach(el => word.appendChild(el));
+
+            line.appendChild(word);
+
+            if (item.space) {
+                line.appendChild(item.space);
+            }
+        }
+
+    });
+
+});
+
+/* === MANIFESTO NO WORD BREAK END === */
+
