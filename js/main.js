@@ -1472,3 +1472,56 @@ window.addEventListener("load", () => {
 
 });
 
+
+
+/* === MOBILE MANIFESTO VISIBLE FINAL START === */
+
+window.addEventListener("load", () => {
+
+    if (window.innerWidth > 820) return;
+
+    const manifesto = document.querySelector("#manifesto");
+    if (!manifesto) return;
+
+    const oldText = manifesto.querySelector(".manifesto-final__text--desktop");
+    if (oldText) {
+        oldText.style.setProperty("display", "none", "important");
+    }
+
+    let mobileText = manifesto.querySelector(".manifesto-mobile-static");
+
+    if (!mobileText) {
+        mobileText = document.createElement("p");
+        mobileText.className = "manifesto-mobile-static";
+        mobileText.textContent =
+            "Легион Мото Гвардия создан для тех, кто стремится стать мастером управления мотоциклом, получить доступ к элитной сети единомышленников и быть готовым к любым вызовам современного мира.";
+
+        const inner = manifesto.querySelector(".manifesto-final__inner");
+        if (inner) inner.appendChild(mobileText);
+    }
+
+    mobileText.style.setProperty("display", "block", "important");
+    mobileText.style.setProperty("visibility", "visible", "important");
+    mobileText.style.setProperty("opacity", "1", "important");
+
+    mobileText.style.setProperty("width", "calc(100% - 16px)", "important");
+    mobileText.style.setProperty("max-width", "none", "important");
+    mobileText.style.setProperty("margin", "0 auto", "important");
+
+    mobileText.style.setProperty("font-size", "27px", "important");
+    mobileText.style.setProperty("line-height", "1.42", "important");
+    mobileText.style.setProperty("font-weight", "400", "important");
+
+    mobileText.style.setProperty("text-align", "center", "important");
+
+    mobileText.style.setProperty("white-space", "normal", "important");
+    mobileText.style.setProperty("word-break", "normal", "important");
+    mobileText.style.setProperty("overflow-wrap", "normal", "important");
+    mobileText.style.setProperty("hyphens", "none", "important");
+
+    mobileText.style.setProperty("color", "#f1f1ed", "important");
+    mobileText.style.setProperty("-webkit-text-fill-color", "#f1f1ed", "important");
+});
+
+/* === MOBILE MANIFESTO VISIBLE FINAL END === */
+
