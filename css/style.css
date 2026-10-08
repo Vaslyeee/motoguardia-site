@@ -9461,7 +9461,6 @@ main > section.section {
   margin-top: 0 !important;
 }
 
-
 /* =========================================================
    FINAL — HEADING TO INTRO SPACING
 ========================================================= */
@@ -9472,13 +9471,12 @@ main > section.section {
 */
 
 .section-heading h2 {
-    margin-bottom: 24px !important;
+  margin-bottom: 24px !important;
 }
 
 .section-heading .section-intro {
-    margin-top: 0 !important;
+  margin-top: 0 !important;
 }
-
 
 /* Для старых блоков, где нет .section-heading */
 
@@ -9486,83 +9484,76 @@ main > section.section {
 .section-title + .lead,
 .section-title + .section-intro,
 .section-title + p {
-    margin-top: 24px !important;
+  margin-top: 24px !important;
 }
-
 
 /* TEAM — точно как на твоём скрине */
 
 #team .section-heading h2 {
-    margin-bottom: 24px !important;
+  margin-bottom: 24px !important;
 }
 
 #team .section-intro {
-    margin-top: 0 !important;
+  margin-top: 0 !important;
 }
-
 
 /* =========================================================
    PRINCIPLES — SCROLL REVEAL FROM SIDES
 ========================================================= */
 
 #principles .principle {
-    opacity: 0;
-    transition:
-        opacity .72s cubic-bezier(.22,.61,.36,1),
-        transform .72s cubic-bezier(.22,.61,.36,1) !important;
+  opacity: 0;
+  transition:
+    opacity 0.72s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.72s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
 
-    will-change: transform, opacity;
+  will-change: transform, opacity;
 }
-
 
 /* 1, 3, 5 — слева */
 
 #principles .principle:nth-child(odd) {
-    transform: translateX(-52px);
+  transform: translateX(-52px);
 }
-
 
 /* 2, 4, 6 — справа */
 
 #principles .principle:nth-child(even) {
-    transform: translateX(52px);
+  transform: translateX(52px);
 }
-
 
 /* когда карточка появляется */
 
 #principles .principle.principle-visible {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
-
 
 /* небольшой каскад */
 
 #principles .principle:nth-child(1) {
-    transition-delay: 0ms !important;
+  transition-delay: 0ms !important;
 }
 
 #principles .principle:nth-child(2) {
-    transition-delay: 70ms !important;
+  transition-delay: 70ms !important;
 }
 
 #principles .principle:nth-child(3) {
-    transition-delay: 140ms !important;
+  transition-delay: 140ms !important;
 }
 
 #principles .principle:nth-child(4) {
-    transition-delay: 210ms !important;
+  transition-delay: 210ms !important;
 }
 
 #principles .principle:nth-child(5) {
-    transition-delay: 280ms !important;
+  transition-delay: 280ms !important;
 }
 
 #principles .principle:nth-child(6) {
-    transition-delay: 350ms !important;
+  transition-delay: 350ms !important;
 }
-
 
 /*
    ВАЖНО:
@@ -9570,55 +9561,49 @@ main > section.section {
 */
 
 #principles .principle:hover {
-    transform: translateX(0) !important;
+  transform: translateX(0) !important;
 }
-
 
 /* заголовки Principles статичные */
 
 #principles .eyebrow,
 #principles .section-title {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
 }
-
 
 @media (max-width: 768px) {
+  .section-heading h2 {
+    margin-bottom: 18px !important;
+  }
 
-    .section-heading h2 {
-        margin-bottom: 18px !important;
-    }
+  .training-intro h2 + p,
+  .section-title + .lead,
+  .section-title + .section-intro,
+  .section-title + p {
+    margin-top: 18px !important;
+  }
 
-    .training-intro h2 + p,
-    .section-title + .lead,
-    .section-title + .section-intro,
-    .section-title + p {
-        margin-top: 18px !important;
-    }
+  #principles .principle:nth-child(odd) {
+    transform: translateX(-30px);
+  }
 
-    #principles .principle:nth-child(odd) {
-        transform: translateX(-30px);
-    }
+  #principles .principle:nth-child(even) {
+    transform: translateX(30px);
+  }
 
-    #principles .principle:nth-child(even) {
-        transform: translateX(30px);
-    }
-
-    #principles .principle.principle-visible {
-        transform: translateX(0);
-    }
+  #principles .principle.principle-visible {
+    transform: translateX(0);
+  }
 }
-
 
 /* ABOUT CENTER — немного ближе к кнопкам сверху */
 #about-center,
 .about-center {
-    transform: translateY(-12px) !important;
+  transform: translateY(-12px) !important;
 }
-
-
 
 /* =========================================================
    SAFE PRINCIPLES ANIMATION FIX
@@ -9626,146 +9611,151 @@ main > section.section {
 
 /* По умолчанию карточки ВСЕГДА видны */
 #principles .principle {
-    opacity: 1 !important;
-    transform: none !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* Анимация включается только когда JS добавил этот класс */
 #principles.principles-anim-ready .principle {
-    opacity: 0 !important;
+  opacity: 0 !important;
 
-    transition:
-        opacity .7s cubic-bezier(.22,.61,.36,1),
-        transform .7s cubic-bezier(.22,.61,.36,1) !important;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
 
-    will-change: opacity, transform;
+  will-change: opacity, transform;
 }
 
 /* нечётные заходят слева */
 #principles.principles-anim-ready .principle:nth-child(odd) {
-    transform: translateX(-46px) !important;
+  transform: translateX(-46px) !important;
 }
 
 /* чётные заходят справа */
 #principles.principles-anim-ready .principle:nth-child(even) {
-    transform: translateX(46px) !important;
+  transform: translateX(46px) !important;
 }
 
 /* видимое состояние */
 #principles.principles-anim-ready .principle.is-principle-visible {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 /* никаких движений при hover */
 #principles .principle:hover {
-    transform: none !important;
+  transform: none !important;
 }
 
 /* заголовки статичные */
 #principles .eyebrow,
 #principles .section-title {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
 }
-
 
 /* =========================================================
    ABOUT CENTER — ЧУТЬ ВЫШЕ
 ========================================================= */
 
 #about-center {
-    margin-top: -12px !important;
+  margin-top: -12px !important;
 }
-
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 768px) {
+  #principles.principles-anim-ready .principle:nth-child(odd) {
+    transform: translateX(-28px) !important;
+  }
 
-    #principles.principles-anim-ready .principle:nth-child(odd) {
-        transform: translateX(-28px) !important;
-    }
+  #principles.principles-anim-ready .principle:nth-child(even) {
+    transform: translateX(28px) !important;
+  }
 
-    #principles.principles-anim-ready .principle:nth-child(even) {
-        transform: translateX(28px) !important;
-    }
+  #principles.principles-anim-ready .principle.is-principle-visible {
+    transform: translateX(0) !important;
+  }
 
-    #principles.principles-anim-ready .principle.is-principle-visible {
-        transform: translateX(0) !important;
-    }
-
-    #about-center {
-        margin-top: -8px !important;
-    }
+  #about-center {
+    margin-top: -8px !important;
+  }
 }
-
-
 
 /* =========================================================
    PRINCIPLES — 3 LEFT / 3 RIGHT
 ========================================================= */
 
 #principles .principle {
-    opacity: 1 !important;
-    transform: none !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* включаем стартовые позиции только когда JS готов */
 #principles.principles-motion-enabled .principle {
-    opacity: 0 !important;
+  opacity: 0 !important;
 
-    transition:
-        opacity .75s cubic-bezier(.22,.61,.36,1),
-        transform .75s cubic-bezier(.22,.61,.36,1) !important;
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
 
-    will-change: opacity, transform;
+  will-change: opacity, transform;
 }
 
 /* 1–3 едут слева */
-#principles.principles-motion-enabled .principle:nth-child(-n+3) {
-    transform: translateX(-70px) !important;
+#principles.principles-motion-enabled .principle:nth-child(-n + 3) {
+  transform: translateX(-70px) !important;
 }
 
 /* 4–6 едут справа */
-#principles.principles-motion-enabled .principle:nth-child(n+4) {
-    transform: translateX(70px) !important;
+#principles.principles-motion-enabled .principle:nth-child(n + 4) {
+  transform: translateX(70px) !important;
 }
 
 /* финальное состояние */
 #principles.principles-motion-enabled .principle.principle-in {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 /* маленький каскад внутри групп */
-#principles .principle:nth-child(1) { transition-delay: 0ms !important; }
-#principles .principle:nth-child(2) { transition-delay: 70ms !important; }
-#principles .principle:nth-child(3) { transition-delay: 140ms !important; }
+#principles .principle:nth-child(1) {
+  transition-delay: 0ms !important;
+}
+#principles .principle:nth-child(2) {
+  transition-delay: 70ms !important;
+}
+#principles .principle:nth-child(3) {
+  transition-delay: 140ms !important;
+}
 
-#principles .principle:nth-child(4) { transition-delay: 0ms !important; }
-#principles .principle:nth-child(5) { transition-delay: 70ms !important; }
-#principles .principle:nth-child(6) { transition-delay: 140ms !important; }
+#principles .principle:nth-child(4) {
+  transition-delay: 0ms !important;
+}
+#principles .principle:nth-child(5) {
+  transition-delay: 70ms !important;
+}
+#principles .principle:nth-child(6) {
+  transition-delay: 140ms !important;
+}
 
 /* hover не двигает карточки */
 #principles .principle:hover {
-    transform: none !important;
+  transform: none !important;
 }
 
 /* заголовки статичны */
 #principles .eyebrow,
 #principles .section-title {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
 }
-
-
 
 /* === PRINCIPLES GROUP MOTION START === */
 
@@ -9774,84 +9764,76 @@ main > section.section {
    Поэтому они никогда не исчезнут насовсем.
 */
 #principles .principle {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
-
 
 /*
    JS запустился:
    первые три стоят слева,
    последние три справа.
 */
-#principles.principles-group-ready .principle:nth-child(-n+3) {
-    opacity: 0 !important;
-    transform: translateX(-110px) !important;
+#principles.principles-group-ready .principle:nth-child(-n + 3) {
+  opacity: 0 !important;
+  transform: translateX(-110px) !important;
 }
 
-#principles.principles-group-ready .principle:nth-child(n+4) {
-    opacity: 0 !important;
-    transform: translateX(110px) !important;
+#principles.principles-group-ready .principle:nth-child(n + 4) {
+  opacity: 0 !important;
+  transform: translateX(110px) !important;
 }
-
 
 /*
    Все шесть двигаются ОДНОВРЕМЕННО.
    Никаких stagger/delay.
 */
 #principles.principles-group-ready .principle {
-    transition:
-        transform .9s cubic-bezier(.22,.61,.36,1),
-        opacity .7s ease !important;
+  transition:
+    transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.7s ease !important;
 
-    transition-delay: 0s !important;
-    will-change: transform, opacity;
+  transition-delay: 0s !important;
+  will-change: transform, opacity;
 }
-
 
 /*
    Когда секция вошла в экран:
    обе тройки одновременно сходятся к центру.
 */
 #principles.principles-group-ready.principles-group-in .principle {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
-
 
 /* hover вообще ничего не двигает */
 #principles .principle:hover {
-    transform: translateX(0) !important;
+  transform: translateX(0) !important;
 }
-
 
 /* заголовок остаётся полностью статичным */
 #principles .eyebrow,
 #principles .section-title {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
 }
 
-
 @media (max-width: 768px) {
+  #principles.principles-group-ready .principle:nth-child(-n + 3) {
+    transform: translateX(-55px) !important;
+  }
 
-    #principles.principles-group-ready .principle:nth-child(-n+3) {
-        transform: translateX(-55px) !important;
-    }
+  #principles.principles-group-ready .principle:nth-child(n + 4) {
+    transform: translateX(55px) !important;
+  }
 
-    #principles.principles-group-ready .principle:nth-child(n+4) {
-        transform: translateX(55px) !important;
-    }
-
-    #principles.principles-group-ready.principles-group-in .principle {
-        transform: translateX(0) !important;
-    }
+  #principles.principles-group-ready.principles-group-in .principle {
+    transform: translateX(0) !important;
+  }
 }
 
 /* === PRINCIPLES GROUP MOTION END === */
-
 
 /* =========================================================
    PRINCIPLES — FINAL PURE CSS SCROLL ANIMATION
@@ -9860,114 +9842,103 @@ main > section.section {
 ========================================================= */
 
 #principles {
-    view-timeline-name: --principles-scroll;
-    view-timeline-axis: block;
+  view-timeline-name: --principles-scroll;
+  view-timeline-axis: block;
 }
-
 
 /* сбрасываем старые попытки */
 #principles .principle {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    animation-delay: 0s !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  animation-delay: 0s !important;
 }
-
 
 /* 01–03 едут слева */
-#principles .principle:nth-child(-n+3) {
-    animation-name: principles-from-left !important;
-    animation-duration: 1ms !important;
-    animation-fill-mode: both !important;
-    animation-timing-function: linear !important;
+#principles .principle:nth-child(-n + 3) {
+  animation-name: principles-from-left !important;
+  animation-duration: 1ms !important;
+  animation-fill-mode: both !important;
+  animation-timing-function: linear !important;
 
-    animation-timeline: --principles-scroll !important;
-    animation-range: entry 12% cover 38% !important;
+  animation-timeline: --principles-scroll !important;
+  animation-range: entry 12% cover 38% !important;
 }
-
 
 /* 04–06 едут справа */
-#principles .principle:nth-child(n+4) {
-    animation-name: principles-from-right !important;
-    animation-duration: 1ms !important;
-    animation-fill-mode: both !important;
-    animation-timing-function: linear !important;
+#principles .principle:nth-child(n + 4) {
+  animation-name: principles-from-right !important;
+  animation-duration: 1ms !important;
+  animation-fill-mode: both !important;
+  animation-timing-function: linear !important;
 
-    animation-timeline: --principles-scroll !important;
-    animation-range: entry 12% cover 38% !important;
+  animation-timeline: --principles-scroll !important;
+  animation-range: entry 12% cover 38% !important;
 }
-
 
 @keyframes principles-from-left {
-    from {
-        opacity: 0.15;
-        transform: translateX(-95px);
-    }
+  from {
+    opacity: 0.15;
+    transform: translateX(-95px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-
 
 @keyframes principles-from-right {
-    from {
-        opacity: 0.15;
-        transform: translateX(95px);
-    }
+  from {
+    opacity: 0.15;
+    transform: translateX(95px);
+  }
 
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-
 
 /* hover не двигает */
 #principles .principle:hover {
-    transform: none !important;
+  transform: none !important;
 }
-
 
 /* заголовки не анимируем */
 #principles .eyebrow,
 #principles .section-title {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
 }
-
 
 @media (max-width: 768px) {
-
-    @keyframes principles-from-left {
-        from {
-            opacity: 0.2;
-            transform: translateX(-45px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
+  @keyframes principles-from-left {
+    from {
+      opacity: 0.2;
+      transform: translateX(-45px);
     }
 
-    @keyframes principles-from-right {
-        from {
-            opacity: 0.2;
-            transform: translateX(45px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
+    to {
+      opacity: 1;
+      transform: translateX(0);
     }
+  }
+
+  @keyframes principles-from-right {
+    from {
+      opacity: 0.2;
+      transform: translateX(45px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
-
-
 
 /* === FINAL RESPONSIVE SYSTEM START === */
 
@@ -9977,9 +9948,16 @@ main > section.section {
   transition: none !important;
   will-change: transform, opacity;
 }
-#principles .principle:hover { transform: none; }
+#principles .principle:hover {
+  transform: none;
+}
 #principles .eyebrow,
-#principles .section-title { animation: none !important; transition: none !important; transform: none !important; opacity: 1 !important; }
+#principles .section-title {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
 
 /* Team and opportunities are intentionally static. */
 #team .reveal,
@@ -10002,8 +9980,13 @@ main > section.section {
   padding-bottom: 70px !important;
   overflow: hidden;
 }
-.manifesto-final__inner { text-align: center; }
-.manifesto-final__logo { width: clamp(155px, 11vw, 220px) !important; margin: 0 auto 38px !important; }
+.manifesto-final__inner {
+  text-align: center;
+}
+.manifesto-final__logo {
+  width: clamp(155px, 11vw, 220px) !important;
+  margin: 0 auto 38px !important;
+}
 .manifesto-final__text {
   width: min(1180px, 92vw) !important;
   margin: 0 auto !important;
@@ -10014,15 +9997,36 @@ main > section.section {
   background: none !important;
   -webkit-text-fill-color: initial !important;
 }
-.manifesto-final__line { display: block !important; white-space: nowrap; font-size: inherit !important; line-height: inherit !important; background: none !important; }
-.manifesto-final__char { display: inline !important; color: rgb(82,84,80); -webkit-text-fill-color: rgb(82,84,80); background: none !important; }
-.manifesto-final__space { display: inline !important; }
+.manifesto-final__line {
+  display: block !important;
+  white-space: nowrap;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  background: none !important;
+}
+.manifesto-final__char {
+  display: inline !important;
+  color: rgb(82, 84, 80);
+  -webkit-text-fill-color: rgb(82, 84, 80);
+  background: none !important;
+}
+.manifesto-final__space {
+  display: inline !important;
+}
 
 /* Consistent heading -> supporting copy spacing. */
-#audience .section-title + .lead { margin-top: 20px !important; }
-#training .training-intro .section-title + p { margin-top: 20px !important; }
-#team .section-heading h2 { margin-bottom: 20px !important; }
-#team .section-intro { margin-top: 0 !important; }
+#audience .section-title + .lead {
+  margin-top: 20px !important;
+}
+#training .training-intro .section-title + p {
+  margin-top: 20px !important;
+}
+#team .section-heading h2 {
+  margin-bottom: 20px !important;
+}
+#team .section-intro {
+  margin-top: 0 !important;
+}
 
 /* Desktop section rhythm — keep existing composition, only remove extreme gaps. */
 #about-center,
@@ -10031,37 +10035,88 @@ main > section.section {
 #training,
 #education,
 #team,
-#opportunities { min-height: 0 !important; height: auto !important; }
+#opportunities {
+  min-height: 0 !important;
+  height: auto !important;
+}
 
 /* ========== TABLET ========== */
 @media (max-width: 1100px) {
-  .container { width: min(100% - 48px, 1200px) !important; }
-  .section { padding-top: 72px !important; padding-bottom: 72px !important; }
-  .section-title, .education h2, .team h2, .opportunities h2 { font-size: clamp(38px, 5.4vw, 58px) !important; }
+  .container {
+    width: min(100% - 48px, 1200px) !important;
+  }
+  .section {
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
+  }
+  .section-title,
+  .education h2,
+  .team h2,
+  .opportunities h2 {
+    font-size: clamp(38px, 5.4vw, 58px) !important;
+  }
 
-  .about-center .container { width: min(100% - 48px, 1200px) !important; }
-  .about-center__layout { grid-template-columns: 1fr 1fr !important; gap: 60px !important; }
-  .about-center__photo { height: 520px !important; }
-  .about-center__title { font-size: clamp(36px, 4.3vw, 54px) !important; }
+  .about-center .container {
+    width: min(100% - 48px, 1200px) !important;
+  }
+  .about-center__layout {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 60px !important;
+  }
+  .about-center__photo {
+    height: 520px !important;
+  }
+  .about-center__title {
+    font-size: clamp(36px, 4.3vw, 54px) !important;
+  }
 
-  .principles-grid { gap: 16px !important; }
-  .principle { min-height: 270px !important; padding: 26px 16px !important; }
-  .principle h3 { font-size: 14px !important; }
-  .principle p { font-size: 14px !important; }
+  .principles-grid {
+    gap: 16px !important;
+  }
+  .principle {
+    min-height: 270px !important;
+    padding: 26px 16px !important;
+  }
+  .principle h3 {
+    font-size: 14px !important;
+  }
+  .principle p {
+    font-size: 14px !important;
+  }
 
-  .directions-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .team__grid, .opportunities__grid { gap: 18px !important; }
+  .directions-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .team__grid,
+  .opportunities__grid {
+    gap: 18px !important;
+  }
 }
 
 /* ========== MOBILE / PORTRAIT TABLET ========== */
 @media (max-width: 820px) {
-  html, body { overflow-x: hidden !important; }
-  .container, .about-center .container { width: calc(100% - 32px) !important; max-width: none !important; }
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
+  .container,
+  .about-center .container {
+    width: calc(100% - 32px) !important;
+    max-width: none !important;
+  }
 
-  .header { min-height: 70px !important; }
-  .header__inner { min-height: 70px !important; }
-  .logo img { width: 54px !important; }
-  .burger { display: flex !important; }
+  .header {
+    min-height: 70px !important;
+  }
+  .header__inner {
+    min-height: 70px !important;
+  }
+  .logo img {
+    width: 54px !important;
+  }
+  .burger {
+    display: flex !important;
+  }
   .nav {
     position: fixed !important;
     inset: 70px 0 auto 0 !important;
@@ -10069,240 +10124,434 @@ main > section.section {
     flex-direction: column !important;
     gap: 0 !important;
     padding: 14px 16px 20px !important;
-    background: rgba(30,32,30,.96) !important;
+    background: rgba(30, 32, 30, 0.96) !important;
     backdrop-filter: blur(14px);
     transform: translateY(-130%) !important;
     opacity: 0 !important;
     pointer-events: none !important;
-    transition: .28s ease !important;
+    transition: 0.28s ease !important;
   }
-  .nav.active { transform: translateY(0) !important; opacity: 1 !important; pointer-events: auto !important; }
-  .nav a { padding: 14px 6px !important; font-size: 14px !important; border-bottom: 1px solid rgba(255,255,255,.06); }
+  .nav.active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  .nav a {
+    padding: 14px 6px !important;
+    font-size: 14px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
 
-  .hero__media { min-height: 62svh !important; height: 62svh !important; }
-  .hero__title-wrap { padding-bottom: 28px !important; }
-  .hero h1 { font-size: clamp(42px, 13vw, 62px) !important; }
-  .hero__bottom { padding: 24px 0 46px !important; }
-  .hero__text { max-width: none !important; }
-  .hero__text p { font-size: 15px !important; line-height: 1.55 !important; }
-  .hero__actions { flex-direction: column !important; gap: 12px !important; margin-top: 26px !important; }
-  .button { width: 100% !important; min-width: 0 !important; height: 56px !important; }
+  .hero__media {
+    min-height: 62svh !important;
+    height: 62svh !important;
+  }
+  .hero__title-wrap {
+    padding-bottom: 28px !important;
+  }
+  .hero h1 {
+    font-size: clamp(42px, 13vw, 62px) !important;
+  }
+  .hero__bottom {
+    padding: 24px 0 46px !important;
+  }
+  .hero__text {
+    max-width: none !important;
+  }
+  .hero__text p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+  .hero__actions {
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-top: 26px !important;
+  }
+  .button {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 56px !important;
+  }
 
-  .section { padding-top: 56px !important; padding-bottom: 56px !important; }
-  .eyebrow, .section-label, .about-center__label { font-size: 12px !important; letter-spacing: .24em !important; margin-bottom: 14px !important; }
-  .section-title, .education h2, .team h2, .opportunities h2, .about-center__title {
+  .section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+  .eyebrow,
+  .section-label,
+  .about-center__label {
+    font-size: 12px !important;
+    letter-spacing: 0.24em !important;
+    margin-bottom: 14px !important;
+  }
+  .section-title,
+  .education h2,
+  .team h2,
+  .opportunities h2,
+  .about-center__title {
     font-size: clamp(32px, 9vw, 44px) !important;
     line-height: 1.02 !important;
   }
-  .lead, .section-intro { font-size: 15px !important; line-height: 1.6 !important; }
+  .lead,
+  .section-intro {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
 
   /* About: stack, remove desktop target geometry on mobile. */
-  #about-center { transform: none !important; margin-top: 0 !important; }
-  .about-center__layout { grid-template-columns: 1fr !important; gap: 34px !important; }
-  .about-center__media { order: 1; }
-  .about-center__content { order: 2; min-height: 0 !important; padding: 0 !important; }
-  .about-center__photo { height: clamp(300px, 78vw, 470px) !important; border-radius: 20px !important; }
-  .about-center__media::before, .about-center__media::after, .about-center__photo::before, .about-center__photo::after,
-  .about-center__crosshair, .about-center__divider { display: none !important; }
-  .about-center__text { margin-top: 28px !important; max-width: none !important; }
-  .about-center__text p { font-size: 16px !important; line-height: 1.6 !important; }
+  #about-center {
+    transform: none !important;
+    margin-top: 0 !important;
+  }
+  .about-center__layout {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+  }
+  .about-center__media {
+    order: 1;
+  }
+  .about-center__content {
+    order: 2;
+    min-height: 0 !important;
+    padding: 0 !important;
+  }
+  .about-center__photo {
+    height: clamp(300px, 78vw, 470px) !important;
+    border-radius: 20px !important;
+  }
+  .about-center__media::before,
+  .about-center__media::after,
+  .about-center__photo::before,
+  .about-center__photo::after,
+  .about-center__crosshair,
+  .about-center__divider {
+    display: none !important;
+  }
+  .about-center__text {
+    margin-top: 28px !important;
+    max-width: none !important;
+  }
+  .about-center__text p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
 
-  .audience-grid { grid-template-columns: 1fr !important; gap: 14px !important; margin-top: 34px !important; }
-  .dark-card { min-height: 0 !important; padding: 24px 22px !important; }
-  .accent-note { margin-top: 20px !important; padding: 20px !important; font-size: 14px !important; }
+  .audience-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 34px !important;
+  }
+  .dark-card {
+    min-height: 0 !important;
+    padding: 24px 22px !important;
+  }
+  .accent-note {
+    margin-top: 20px !important;
+    padding: 20px !important;
+    font-size: 14px !important;
+  }
 
-  .principles-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; margin-top: 36px !important; }
-  .principle { min-height: 230px !important; padding: 22px 14px !important; }
-  .principle__icon { width: 58px !important; height: 58px !important; margin-bottom: 22px !important; }
-  .principle h3 { margin-bottom: 14px !important; font-size: 13px !important; }
-  .principle p { font-size: 13px !important; line-height: 1.5 !important; }
+  .principles-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    margin-top: 36px !important;
+  }
+  .principle {
+    min-height: 230px !important;
+    padding: 22px 14px !important;
+  }
+  .principle__icon {
+    width: 58px !important;
+    height: 58px !important;
+    margin-bottom: 22px !important;
+  }
+  .principle h3 {
+    margin-bottom: 14px !important;
+    font-size: 13px !important;
+  }
+  .principle p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
 
-  .training-intro { grid-template-columns: 1fr !important; gap: 30px !important; }
-  .training-intro p { font-size: 15px !important; line-height: 1.6 !important; margin-top: 18px !important; }
-  .training-photo { min-height: 280px !important; }
-  .system-title { margin-top: 70px !important; }
-  .system-grid { grid-template-columns: 1fr !important; gap: 14px !important; margin-top: 34px !important; }
-  .system-exam { grid-column: auto !important; }
+  .training-intro {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  .training-intro p {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin-top: 18px !important;
+  }
+  .training-photo {
+    min-height: 280px !important;
+  }
+  .system-title {
+    margin-top: 70px !important;
+  }
+  .system-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 34px !important;
+  }
+  .system-exam {
+    grid-column: auto !important;
+  }
 
-  .directions-grid { grid-template-columns: 1fr !important; gap: 14px !important; margin-top: 34px !important; }
-  .direction-card { min-height: 230px !important; }
+  .directions-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 34px !important;
+  }
+  .direction-card {
+    min-height: 230px !important;
+  }
 
-  .education__layout { grid-template-columns: 1fr !important; gap: 38px !important; margin-top: 38px !important; }
-  .education__steps { padding-right: 0 !important; }
-  .education__gallery { grid-template-columns: 1fr !important; gap: 12px !important; }
-  .education__photo { min-height: 220px !important; height: 240px !important; }
-  .education__photo--main, .education__photo--night, .education__photo--city, .education__photo--bridge { grid-column: auto !important; grid-row: auto !important; }
+  .education__layout {
+    grid-template-columns: 1fr !important;
+    gap: 38px !important;
+    margin-top: 38px !important;
+  }
+  .education__steps {
+    padding-right: 0 !important;
+  }
+  .education__gallery {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .education__photo {
+    min-height: 220px !important;
+    height: 240px !important;
+  }
+  .education__photo--main,
+  .education__photo--night,
+  .education__photo--city,
+  .education__photo--bridge {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
 
-  .team__grid { grid-template-columns: 1fr !important; gap: 14px !important; }
-  .team-card--founder { height: auto !important; grid-template-columns: 1fr !important; }
-  .team-card--founder .team-card__image { height: 320px !important; }
-  .team-card__content, .team-card:not(.team-card--founder) { padding: 24px !important; }
+  .team__grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .team-card--founder {
+    height: auto !important;
+    grid-template-columns: 1fr !important;
+  }
+  .team-card--founder .team-card__image {
+    height: 320px !important;
+  }
+  .team-card__content,
+  .team-card:not(.team-card--founder) {
+    padding: 24px !important;
+  }
 
-  .opportunities__grid { grid-template-columns: 1fr !important; gap: 14px !important; }
-  .opportunity-card { min-height: 0 !important; padding: 24px !important; }
-  .opportunities__statement { flex-direction: column !important; gap: 12px !important; padding: 22px !important; }
+  .opportunities__grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .opportunity-card {
+    min-height: 0 !important;
+    padding: 24px !important;
+  }
+  .opportunities__statement {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 22px !important;
+  }
 
-  #manifesto.manifesto-final { padding-top: 56px !important; padding-bottom: 56px !important; }
-  .manifesto-final__logo { width: 145px !important; margin-bottom: 32px !important; }
-  .manifesto-final__text { width: 100% !important; font-size: 21px !important; line-height: 1.48 !important; }
-  .manifesto-final__line { white-space: normal !important; display: block !important; }
+  #manifesto.manifesto-final {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+  .manifesto-final__logo {
+    width: 145px !important;
+    margin-bottom: 32px !important;
+  }
+  .manifesto-final__text {
+    width: 100% !important;
+    font-size: 21px !important;
+    line-height: 1.48 !important;
+  }
+  .manifesto-final__line {
+    white-space: normal !important;
+    display: block !important;
+  }
 
-  .contacts-final { margin-top: 18px !important; padding: 64px 16px 74px !important; }
-  .contacts-final__title { font-size: clamp(34px, 10vw, 50px) !important; line-height: 1.02 !important; }
-  .contacts-final__links { flex-direction: column !important; gap: 18px !important; margin-top: 42px !important; }
-  .contacts-final__link { font-size: clamp(34px, 12vw, 58px) !important; }
+  .contacts-final {
+    margin-top: 18px !important;
+    padding: 64px 16px 74px !important;
+  }
+  .contacts-final__title {
+    font-size: clamp(34px, 10vw, 50px) !important;
+    line-height: 1.02 !important;
+  }
+  .contacts-final__links {
+    flex-direction: column !important;
+    gap: 18px !important;
+    margin-top: 42px !important;
+  }
+  .contacts-final__link {
+    font-size: clamp(34px, 12vw, 58px) !important;
+  }
 }
 
 @media (max-width: 520px) {
-  .container, .about-center .container { width: calc(100% - 24px) !important; }
-  .section { padding-top: 48px !important; padding-bottom: 48px !important; }
-  .principles-grid { grid-template-columns: 1fr !important; }
-  .principle { min-height: 210px !important; }
-  .about-center__photo { height: 74vw !important; min-height: 270px !important; }
-  .team-card--founder .team-card__image { height: 280px !important; }
-  .education__photo { height: 215px !important; }
-  .manifesto-final__text { font-size: 19px !important; }
+  .container,
+  .about-center .container {
+    width: calc(100% - 24px) !important;
+  }
+  .section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+  .principles-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .principle {
+    min-height: 210px !important;
+  }
+  .about-center__photo {
+    height: 74vw !important;
+    min-height: 270px !important;
+  }
+  .team-card--founder .team-card__image {
+    height: 280px !important;
+  }
+  .education__photo {
+    height: 215px !important;
+  }
+  .manifesto-final__text {
+    font-size: 19px !important;
+  }
 }
 
 /* === FINAL RESPONSIVE SYSTEM END === */
-
 
 /* =========================================================
    MANIFESTO — REAL FINAL OVERRIDE
 ========================================================= */
 
 #manifesto .manifesto-final__text {
-    width: min(1180px, 90vw) !important;
-    margin: 0 auto !important;
+  width: min(1180px, 90vw) !important;
+  margin: 0 auto !important;
 
-    font-size: 28px !important;
-    line-height: 1.48 !important;
-    font-weight: 400 !important;
-    letter-spacing: -0.01em !important;
+  font-size: 28px !important;
+  line-height: 1.48 !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
 
-    text-align: center !important;
+  text-align: center !important;
 
-    /* отключаем старые gradient/text-fill хаки */
-    background: none !important;
-    -webkit-background-clip: initial !important;
-    background-clip: initial !important;
-    -webkit-text-fill-color: initial !important;
+  /* отключаем старые gradient/text-fill хаки */
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
 
-    color: rgba(242, 241, 235, 0.18) !important;
+  color: rgba(242, 241, 235, 0.18) !important;
 }
 
 #manifesto .manifesto-final__line {
-    display: block !important;
+  display: block !important;
 
-    font-size: inherit !important;
-    line-height: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
 
-    background: none !important;
-    -webkit-background-clip: initial !important;
-    background-clip: initial !important;
-    -webkit-text-fill-color: initial !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
 
-    color: inherit !important;
+  color: inherit !important;
 }
-
 
 /* каждый символ */
 #manifesto .manifesto-diag-char {
-    display: inline-block;
+  display: inline-block;
 
-    color: rgba(242, 241, 235, 0.16);
+  color: rgba(242, 241, 235, 0.16);
 
-    transition: color .04s linear;
+  transition: color 0.04s linear;
 }
-
 
 /* пробелы */
 #manifesto .manifesto-diag-char.is-space {
-    width: .32em;
+  width: 0.32em;
 }
-
 
 /* чуть уменьшаем расстояние логотип → текст */
 #manifesto .manifesto-final__logo {
-    margin-bottom: 42px !important;
+  margin-bottom: 42px !important;
 }
-
 
 @media (max-width: 768px) {
+  #manifesto .manifesto-final__text {
+    width: 92vw !important;
 
-    #manifesto .manifesto-final__text {
-        width: 92vw !important;
+    font-size: clamp(21px, 5.8vw, 28px) !important;
+    line-height: 1.42 !important;
+  }
 
-        font-size: clamp(21px, 5.8vw, 28px) !important;
-        line-height: 1.42 !important;
-    }
-
-    #manifesto .manifesto-final__logo {
-        margin-bottom: 30px !important;
-    }
+  #manifesto .manifesto-final__logo {
+    margin-bottom: 30px !important;
+  }
 }
-
-
 
 /* === MOBILE PHOTO + DIRECTION TAP FIX START === */
 
 @media (max-width: 820px) {
-
-    /* ===== Tactical Ride photo =====
+  /* ===== Tactical Ride photo =====
        Убираем искусственную высоту, из-за которой был пустой низ.
     */
-    .training-photo {
-        height: auto !important;
-        min-height: 0 !important;
-        aspect-ratio: auto !important;
-        overflow: hidden !important;
-        border-radius: 20px !important;
+  .training-photo {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+    border-radius: 20px !important;
+  }
+
+  .training-photo img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+    border-radius: inherit !important;
+  }
+
+  /* Направления: курсор не нужен на телефоне */
+  .direction-card {
+    cursor: pointer !important;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* убираем залипание браузерного hover на touch */
+  @media (hover: none) {
+    .direction-card:hover {
+      transform: none;
     }
+  }
 
-    .training-photo img {
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
-        object-fit: contain !important;
-        margin: 0 !important;
-        border-radius: inherit !important;
-    }
+  .dark-card:hover,
+  .principle:hover,
+  .direction-card.mobile-open {
+    border-color: #9ba864;
+    box-shadow:
+      0 0 0 1px rgba(155, 168, 100, 0.18),
+      0 0 26px rgba(120, 140, 70, 0.17);
+    transform: translateY(-3px);
+  }
 
-    /* Направления: курсор не нужен на телефоне */
-    .direction-card {
-        cursor: pointer !important;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-    }
+  .direction-card.mobile-open::before {
+    transform: scale(1.08);
+  }
 
-    /* убираем залипание браузерного hover на touch */
-    @media (hover: none) {
-        .direction-card:hover {
-            transform: none;
-        }
-    }
-
-.dark-card:hover,
-.principle:hover,
-.direction-card.mobile-open {
-
-  border-color: #9ba864;
-  box-shadow:
-    0 0 0 1px rgba(155, 168, 100, 0.18),
-    0 0 26px rgba(120, 140, 70, 0.17);
-  transform: translateY(-3px);
-
-}
-
-.direction-card.mobile-open::before {
-
-  transform: scale(1.08);
-
-}
-
-.direction-card.mobile-open {
-
+  .direction-card.mobile-open {
     transform: none !important;
 
     border-color: #98a45b;
@@ -10310,238 +10559,186 @@ main > section.section {
     box-shadow:
       0 0 0 1px rgba(151, 164, 91, 0.12),
       0 0 24px rgba(126, 145, 65, 0.12);
-  
-}
+  }
 
-/* ОЛИВКОВЫЙ ФОН ПОВЕРХ ФОТО */
+  /* ОЛИВКОВЫЙ ФОН ПОВЕРХ ФОТО */
 
   .direction-card.mobile-open::after {
-
     background: linear-gradient(
       135deg,
       rgba(89, 99, 49, 0.94) 0%,
       rgba(105, 116, 59, 0.91) 52%,
       rgba(74, 82, 42, 0.94) 100%
     );
-  
-}
+  }
 
-.direction-card.mobile-open p {
-
+  .direction-card.mobile-open p {
     opacity: 1;
 
     transform: translateY(0);
-  
-}
+  }
 
-.direction-card.mobile-open h3 {
-
+  .direction-card.mobile-open h3 {
     transform: translateY(-4px);
-  
-}
+  }
 
-/* =====================================================
+  /* =====================================================
    7. НИКАКОГО ZOOM НА ФОТОКАРТОЧКАХ
 ===================================================== */
 
-.direction-card.mobile-open::before {
+  .direction-card.mobile-open::before {
+    transform: none !important;
+  }
 
-  transform: none !important;
+  .direction-card.mobile-open {
+    transform: none !important;
+    box-shadow: none !important;
+  }
 
-}
-
-.direction-card.mobile-open {
-
-  transform: none !important;
-  box-shadow: none !important;
-
-}
-
-.direction-card.mobile-open::after {
-
+  .direction-card.mobile-open::after {
     background: linear-gradient(
       135deg,
       rgba(102, 111, 58, 0.94) 0%,
       rgba(116, 126, 67, 0.92) 52%,
       rgba(90, 99, 52, 0.94) 100%
     );
-  
-}
+  }
 
-.direction-card.mobile-open .direction-card__extra {
-
+  .direction-card.mobile-open .direction-card__extra {
     opacity: 1;
     visibility: visible;
-  
-}
+  }
 
-/* =====================================================
+  /* =====================================================
    3. УБИРАЕМ ЛЮБЫЕ СТАРЫЕ ЭФФЕКТЫ С ЭТИХ КАРТОЧЕК
 ===================================================== */
 
-.direction-card,
-.direction-card.mobile-open,
-.direction-card * {
+  .direction-card,
+  .direction-card.mobile-open,
+  .direction-card * {
+    animation: none !important;
+  }
 
-  animation: none !important;
-
-}
-
-.direction-card.mobile-open {
-
+  .direction-card.mobile-open {
     transform: none !important;
 
     box-shadow: none !important;
 
     border-color: rgba(145, 157, 82, 0.7);
-  
-}
+  }
 
-/* ФОТО НЕ УВЕЛИЧИВАЕТСЯ */
+  /* ФОТО НЕ УВЕЛИЧИВАЕТСЯ */
 
   .direction-card.mobile-open::before {
-
     transform: none !important;
-  
-}
+  }
 
-/* ПРОСТО ОЛИВКОВЫЙ СЛОЙ ПОВЕРХ ФОТО */
+  /* ПРОСТО ОЛИВКОВЫЙ СЛОЙ ПОВЕРХ ФОТО */
 
   .direction-card.mobile-open::after {
-
     background: linear-gradient(
       135deg,
       rgba(84, 94, 48, 0.94) 0%,
       rgba(104, 114, 61, 0.92) 50%,
       rgba(73, 82, 42, 0.95) 100%
     );
-  
-}
+  }
 
-/* ДОП ТЕКСТ ПОЯВЛЯЕТСЯ */
+  /* ДОП ТЕКСТ ПОЯВЛЯЕТСЯ */
 
   .direction-card.mobile-open .direction-card__extra {
-
     opacity: 1;
 
     visibility: visible;
-  
-}
+  }
 
-/* ВСЁ ОСТАЛЬНОЕ ОСТАЁТСЯ СТРОГО НА МЕСТЕ */
+  /* ВСЁ ОСТАЛЬНОЕ ОСТАЁТСЯ СТРОГО НА МЕСТЕ */
 
   .direction-card.mobile-open h3,
   .direction-card.mobile-open > p {
-
     transform: none !important;
-  
-}
+  }
 
-.direction-card.mobile-open {
-
+  .direction-card.mobile-open {
     transform: none !important;
 
     box-shadow: none !important;
 
     border-color: rgba(126, 138, 69, 0.52) !important;
-  
-}
+  }
 
-.direction-card.mobile-open::before {
-
+  .direction-card.mobile-open::before {
     transform: none !important;
-  
-}
+  }
 
-.direction-card.mobile-open::after {
-
+  .direction-card.mobile-open::after {
     background: linear-gradient(
       135deg,
       rgba(97, 108, 53, 0.88) 0%,
       rgba(111, 122, 63, 0.86) 55%,
       rgba(83, 92, 45, 0.9) 100%
     );
-  
-}
+  }
 
-/* Старый короткий текст исчезает */
+  /* Старый короткий текст исчезает */
   .direction-card.mobile-open > p {
-
     opacity: 0;
     visibility: hidden;
-  
-}
+  }
 
-/* Подробный появляется */
+  /* Подробный появляется */
   .direction-card.mobile-open .direction-card__extra {
-
     opacity: 1;
     visibility: visible;
-  
-}
+  }
 
-.direction-card.mobile-open {
-
+  .direction-card.mobile-open {
     transform: none !important;
     box-shadow: none !important;
-  
-}
+  }
 
-/* Фото остаётся, но сверху появляется плотный olive */
+  /* Фото остаётся, но сверху появляется плотный olive */
   .direction-card.mobile-open::after {
-
     background: linear-gradient(
       135deg,
       rgba(115, 125, 64, 0.96) 0%,
       rgba(126, 137, 70, 0.95) 50%,
       rgba(98, 108, 54, 0.97) 100%
     ) !important;
-  
-}
+  }
 
-/* короткая подпись исчезает */
+  /* короткая подпись исчезает */
   .direction-card.mobile-open > p {
-
     opacity: 0 !important;
     visibility: hidden !important;
-  
-}
+  }
 
-/* подробный текст появляется */
+  /* подробный текст появляется */
   .direction-card.mobile-open .direction-hover-description {
-
     opacity: 1 !important;
     visibility: visible !important;
-  
-}
+  }
 
-/* заголовок остаётся */
+  /* заголовок остаётся */
   .direction-card.mobile-open h3 {
-
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
-  
-}
+  }
 
-/* никакого zoom */
-.direction-card.mobile-open::before {
-
-  transform: none !important;
-
-}
-
+  /* никакого zoom */
+  .direction-card.mobile-open::before {
+    transform: none !important;
+  }
 }
 
 /* === MOBILE PHOTO + DIRECTION TAP FIX END === */
-
 
 /* =========================================================
    MOBILE HEADINGS — FINAL SIZE FIX
 ========================================================= */
 
 @media (max-width: 820px) {
-
   .section-title,
   .education h2,
   .team h2,
@@ -10549,11 +10746,7 @@ main > section.section {
   .about-center__title,
   .training h2,
   .directions h2 {
-    font-size: clamp(
-      30px,
-      calc(9vw - 2px),
-      42px
-    ) !important;
+    font-size: clamp(30px, calc(9vw - 2px), 42px) !important;
 
     line-height: 1.04 !important;
     max-width: 100% !important;
@@ -10561,11 +10754,7 @@ main > section.section {
 
   /* длинный заголовок команды */
   .team h2 {
-    font-size: clamp(
-      28px,
-      8vw,
-      38px
-    ) !important;
+    font-size: clamp(28px, 8vw, 38px) !important;
 
     line-height: 1.04 !important;
     letter-spacing: -0.015em !important;
@@ -10576,36 +10765,25 @@ main > section.section {
 }
 
 @media (max-width: 520px) {
-
   .section-title,
   .education h2,
   .opportunities h2,
   .about-center__title,
   .training h2,
   .directions h2 {
-    font-size: clamp(
-      29px,
-      calc(9vw - 2px),
-      40px
-    ) !important;
+    font-size: clamp(29px, calc(9vw - 2px), 40px) !important;
   }
 
   .team h2 {
-    font-size: clamp(
-      27px,
-      7.8vw,
-      35px
-    ) !important;
+    font-size: clamp(27px, 7.8vw, 35px) !important;
   }
 }
-
 
 /* =========================================================
    MOBILE — MENU / STICKY HEADER / IMAGE ALIGNMENT FINAL
 ========================================================= */
 
 @media (max-width: 820px) {
-
   /* ---------- sticky header ---------- */
 
   .header {
@@ -10674,7 +10852,7 @@ main > section.section {
     font-size: 14px !important;
     line-height: 1.2 !important;
 
-    border-bottom: 1px solid rgba(255,255,255,.07) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
   }
 
   .nav a + a {
@@ -10755,13 +10933,10 @@ main > section.section {
     border-radius: 18px !important;
     overflow: hidden !important;
   }
-
 }
-
 
 /* совсем узкие телефоны */
 @media (max-width: 520px) {
-
   .container,
   .about-center .container {
     width: calc(100% - 28px) !important;
@@ -10786,13 +10961,11 @@ main > section.section {
   }
 }
 
-
 /* =========================================================
    MOBILE MENU — REAL FINAL COMPACT FIX
 ========================================================= */
 
 @media (max-width: 820px) {
-
   /* Шапка всегда сверху */
   .header {
     position: fixed !important;
@@ -10876,7 +11049,7 @@ main > section.section {
     width: 76px !important;
     height: 1px !important;
 
-    background: rgba(255,255,255,.08) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
   }
 
   /* убираем любые старые огромные отступы */
@@ -10893,7 +11066,6 @@ main > section.section {
     min-height: 0 !important;
     bottom: auto !important;
   }
-
 }
 
 /* =========================================================
@@ -10901,7 +11073,6 @@ main > section.section {
 ========================================================= */
 
 @media (max-width: 820px) {
-
   /* первый смысловой блок после hero поднимаем выше */
   #about-center,
   .about-center {
@@ -10913,11 +11084,9 @@ main > section.section {
   .about-center.section {
     padding-top: 24px !important;
   }
-
 }
 
 @media (max-width: 520px) {
-
   #about-center,
   .about-center {
     margin-top: -85px !important;
@@ -10927,16 +11096,13 @@ main > section.section {
   .about-center.section {
     padding-top: 20px !important;
   }
-
 }
-
 
 /* =========================================================
    MOBILE MENU — GAP 4PX + FONT +2PX
 ========================================================= */
 
 @media (max-width: 820px) {
-
   .header .nav,
   .nav {
     gap: 4px !important;
@@ -10946,16 +11112,13 @@ main > section.section {
   .nav a {
     font-size: 16px !important;
   }
-
 }
-
 
 /* =========================================================
    MOBILE MENU — GAP 4PX + FONT +2PX
 ========================================================= */
 
 @media (max-width: 820px) {
-
   .header .nav,
   .nav {
     gap: 4px !important;
@@ -10965,99 +11128,92 @@ main > section.section {
   .nav a {
     font-size: 16px !important;
   }
-
 }
-
-
 
 /* =========================================================
    MOBILE DIRECTIONS — DESCRIPTION FINAL
 ========================================================= */
 
 @media (max-width: 820px) {
+  .direction-card {
+    position: relative !important;
+    overflow: hidden !important;
+  }
 
-    .direction-card {
-        position: relative !important;
-        overflow: hidden !important;
-    }
+  /* весь контент карточки выше оливкового слоя */
+  .direction-card > * {
+    position: relative;
+    z-index: 5;
+  }
 
-    /* весь контент карточки выше оливкового слоя */
-    .direction-card > * {
-        position: relative;
-        z-index: 5;
-    }
+  .mobile-direction-description {
+    display: none !important;
+    position: absolute !important;
 
-    .mobile-direction-description {
-        display: none !important;
-        position: absolute !important;
+    left: 24px !important;
+    right: 24px !important;
+    bottom: 24px !important;
 
-        left: 24px !important;
-        right: 24px !important;
-        bottom: 24px !important;
+    width: auto !important;
+    max-width: none !important;
 
-        width: auto !important;
-        max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 
-        margin: 0 !important;
-        padding: 0 !important;
+    color: #f2f1eb !important;
+    -webkit-text-fill-color: #f2f1eb !important;
 
-        color: #f2f1eb !important;
-        -webkit-text-fill-color: #f2f1eb !important;
+    font-size: 15px !important;
+    line-height: 1.48 !important;
+    font-weight: 400 !important;
 
-        font-size: 15px !important;
-        line-height: 1.48 !important;
-        font-weight: 400 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
 
-        opacity: 0 !important;
-        visibility: hidden !important;
+    z-index: 999 !important;
+    pointer-events: none !important;
+  }
 
-        z-index: 999 !important;
-        pointer-events: none !important;
-    }
+  .direction-card.mobile-open .mobile-direction-description {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 
-    .direction-card.mobile-open .mobile-direction-description {
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
+  /* чтобы длинный текст точно помещался */
+  .direction-card.mobile-open {
+    min-height: 340px !important;
+  }
 
-    /* чтобы длинный текст точно помещался */
-    .direction-card.mobile-open {
-        min-height: 340px !important;
-    }
-
-    .direction-card.mobile-open h2,
-    .direction-card.mobile-open h3,
-    .direction-card.mobile-open h4,
-    .direction-card.mobile-open .direction-card__title {
-        position: relative !important;
-        z-index: 1000 !important;
-    }
+  .direction-card.mobile-open h2,
+  .direction-card.mobile-open h3,
+  .direction-card.mobile-open h4,
+  .direction-card.mobile-open .direction-card__title {
+    position: relative !important;
+    z-index: 1000 !important;
+  }
 }
 
 @media (max-width: 520px) {
+  .direction-card.mobile-open {
+    min-height: 360px !important;
+  }
 
-    .direction-card.mobile-open {
-        min-height: 360px !important;
-    }
+  .mobile-direction-description {
+    left: 22px !important;
+    right: 22px !important;
+    bottom: 24px !important;
 
-    .mobile-direction-description {
-        left: 22px !important;
-        right: 22px !important;
-        bottom: 24px !important;
-
-        font-size: 14px !important;
-        line-height: 1.5 !important;
-    }
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
 }
-
 
 /* =========================================================
    MOBILE MENU — GAP 6PX + FONT 17PX
 ========================================================= */
 
 @media (max-width: 820px) {
-
   .header .nav,
   .nav {
     gap: 6px !important;
@@ -11067,16 +11223,13 @@ main > section.section {
   .nav a {
     font-size: 17px !important;
   }
-
 }
-
 
 /* =========================================================
    MOBILE DIRECTIONS — KEEP CARD SIZE ON TAP
 ========================================================= */
 
 @media (max-width: 820px) {
-
   /* карточка НИКОГДА не увеличивается при открытии */
   .direction-card,
   .direction-card.mobile-open {
@@ -11134,11 +11287,9 @@ main > section.section {
   .direction-card.mobile-open {
     transform: none !important;
   }
-
 }
 
 @media (max-width: 520px) {
-
   .direction-card,
   .direction-card.mobile-open {
     height: 230px !important;
@@ -11167,16 +11318,13 @@ main > section.section {
     font-size: 12.5px !important;
     line-height: 1.36 !important;
   }
-
 }
-
 
 /* =========================================================
    MOBILE MENU — 8px GAP + REMOVE UNDERLINES
 ========================================================= */
 
 @media (max-width: 820px) {
-
   /* контейнер меню */
   .mobile-menu nav,
   .mobile-nav,
@@ -11258,13 +11406,11 @@ main > section.section {
   }
 }
 
-
 /* =========================================================
    MOBILE DIRECTIONS — MATCH DESKTOP HOVER GEOMETRY
 ========================================================= */
 
 @media (max-width: 820px) {
-
   /* размер карточки до и после тапа одинаковый */
   .direction-card,
   .direction-card.mobile-open {
@@ -11335,11 +11481,9 @@ main > section.section {
   .direction-card.mobile-open {
     min-height: 245px !important;
   }
-
 }
 
 @media (max-width: 520px) {
-
   .direction-card,
   .direction-card.mobile-open {
     min-height: 230px !important;
@@ -11354,16 +11498,13 @@ main > section.section {
     font-size: 13px !important;
     line-height: 1.42 !important;
   }
-
 }
-
 
 /* =========================================================
    MOBILE MENU — TRUE 8PX GAP / NO LINES
 ========================================================= */
 
 @media (max-width: 820px) {
-
   .header .nav,
   .nav {
     display: flex !important;
@@ -11412,9 +11553,7 @@ main > section.section {
     background: none !important;
     border: 0 !important;
   }
-
 }
-
 
 /* MOBILE DIRECTIONS — DESCRIPTION TEXT +2PX */
 @media (max-width: 820px) {
@@ -11433,43 +11572,33 @@ main > section.section {
   }
 }
 
-
 /* MOBILE MENU — GAP 20PX */
 @media (max-width: 820px) {
-
   .header .nav,
   .nav {
     gap: 20px !important;
     row-gap: 20px !important;
   }
-
 }
-
 
 /* MOBILE DIRECTIONS — SAME DESCRIPTION SIZE ON ALL CARDS */
 @media (max-width: 820px) {
-
   .directions-grid .direction-card .mobile-direction-description,
   .directions-grid .direction-card.mobile-open .mobile-direction-description {
     font-size: 16px !important;
     line-height: 1.4 !important;
     font-weight: 400 !important;
   }
-
 }
-
 
 /* MOBILE MENU — GAP 25PX */
 @media (max-width: 820px) {
-
   .header .nav,
   .nav {
     gap: 25px !important;
     row-gap: 25px !important;
   }
-
 }
-
 
 /* LEARN MORE — SMOOTH SCROLL */
 html {
@@ -11487,7 +11616,6 @@ html {
     scroll-margin-top: 78px;
   }
 }
-
 
 /* =========================================================
    LEARN MORE BUTTON — CLICK FIX
@@ -11519,8 +11647,6 @@ html {
   pointer-events: none !important;
 }
 
-
-
 /* === FINAL CLICK LAYERS START === */
 
 .hero__content,
@@ -11528,17 +11654,17 @@ html {
 .header,
 .header__inner,
 .nav {
-    position: relative;
-    z-index: 100;
+  position: relative;
+  z-index: 100;
 }
 
 .hero__actions a,
 .nav a,
 .header a {
-    position: relative;
-    z-index: 110;
-    pointer-events: auto !important;
-    cursor: pointer;
+  position: relative;
+  z-index: 110;
+  pointer-events: auto !important;
+  cursor: pointer;
 }
 
 .hero__video,
@@ -11546,74 +11672,70 @@ html {
 .hero__overlay,
 .hero::before,
 .hero::after {
-    pointer-events: none !important;
+  pointer-events: none !important;
 }
 
 /* === FINAL CLICK LAYERS END === */
 
-
 /* === MANIFESTO WORD WRAP FIX === */
 
 .manifesto-final__word {
-    display: inline-block !important;
-    white-space: nowrap !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
 }
 
 .manifesto-final__line {
-    word-break: normal !important;
-    overflow-wrap: normal !important;
-    hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
 }
-
 
 /* === MANIFESTO RUSSIAN TYPOGRAPHY FINAL === */
 
 .manifesto-final__word,
 .manifesto-final__nowrap {
-    display: inline-block !important;
-    white-space: nowrap !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
 }
 
 .manifesto-final__line {
-    word-break: normal !important;
-    overflow-wrap: normal !important;
-    hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
 }
-
 
 /* === MANIFESTO NO WORD BREAK FINAL === */
 
 .manifesto-final__word,
 .manifesto-final__phrase {
-    display: inline-block !important;
-    white-space: nowrap !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
 }
 
 .manifesto-final__line {
-    word-break: keep-all !important;
-    overflow-wrap: normal !important;
-    hyphens: none !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
 }
 
 .manifesto-final__fixed-space {
-    display: inline !important;
-    white-space: pre !important;
+  display: inline !important;
+  white-space: pre !important;
 }
 
 @media (max-width: 820px) {
-    .manifesto-final__text {
-        width: calc(100% - 24px) !important;
-        max-width: 100% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
+  .manifesto-final__text {
+    width: calc(100% - 24px) !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 
-    .manifesto-final__line {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
+  .manifesto-final__line {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
-
 
 /* =========================================================
    MOBILE MANIFESTO — HARD WORD WRAP FIX
@@ -11621,7 +11743,6 @@ html {
 ========================================================= */
 
 @media (max-width: 820px) {
-
   .manifesto-final__text {
     position: relative !important;
 
@@ -11648,8 +11769,7 @@ html {
 
   /* Выводим нормальный цельный текст */
   .manifesto-final__text::after {
-    content:
-      "Легион Мото Гвардия создан для тех, кто стремится стать мастером управления мотоциклом, получить доступ к элитной сети единомышленников и быть готовым к любым вызовам современного мира.";
+    content: "Легион Мото Гвардия создан для тех, кто стремится стать мастером управления мотоциклом, получить доступ к элитной сети единомышленников и быть готовым к любым вызовам современного мира.";
 
     display: block !important;
 
@@ -11668,77 +11788,68 @@ html {
     color: #f1f1ed !important;
     -webkit-text-fill-color: #f1f1ed !important;
   }
-
 }
 
 @media (max-width: 520px) {
-
   .manifesto-final__text {
     font-size: 30px !important;
     line-height: 1.45 !important;
 
     width: calc(100% - 28px) !important;
   }
-
 }
-
 
 /* =========================================================
    MOBILE MANIFESTO — PLAIN TEXT FINAL
 ========================================================= */
 
 @media (max-width: 820px) {
+  .manifesto-final__text {
+    width: calc(100% - 16px) !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 
-    .manifesto-final__text {
-        width: calc(100% - 16px) !important;
-        max-width: none !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+    font-size: 29px !important;
+    line-height: 1.42 !important;
 
-        font-size: 29px !important;
-        line-height: 1.42 !important;
+    text-align: center !important;
 
-        text-align: center !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+  }
 
-        word-break: normal !important;
-        overflow-wrap: normal !important;
-        hyphens: none !important;
-    }
+  .manifesto-mobile-plain {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
 
-    .manifesto-mobile-plain {
-        display: block !important;
-        width: 100% !important;
-        max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 
-        margin: 0 !important;
-        padding: 0 !important;
+    font: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: inherit !important;
 
-        font: inherit !important;
-        line-height: inherit !important;
-        letter-spacing: inherit !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
 
-        white-space: normal !important;
-        word-break: normal !important;
-        overflow-wrap: normal !important;
-        hyphens: none !important;
+    color: #f1f1ed !important;
+    -webkit-text-fill-color: #f1f1ed !important;
 
-        color: #f1f1ed !important;
-        -webkit-text-fill-color: #f1f1ed !important;
-
-        text-align: center !important;
-    }
-
+    text-align: center !important;
+  }
 }
 
 @media (max-width: 520px) {
-
-    .manifesto-final__text {
-        width: calc(100% - 12px) !important;
-        font-size: 29px !important;
-    }
-
+  .manifesto-final__text {
+    width: calc(100% - 12px) !important;
+    font-size: 29px !important;
+  }
 }
-
 
 /* =========================================================
    MANIFESTO MOBILE — TRUE FINAL FIX
@@ -11750,7 +11861,6 @@ html {
 }
 
 @media (max-width: 820px) {
-
   /* полностью скрываем старый анимированный текст */
   #manifesto .manifesto-final__text {
     display: none !important;
@@ -11794,3 +11904,49 @@ html {
   }
 }
 
+/* =========================================================
+   MOBILE MANIFESTO — NO BROKEN WORDS
+========================================================= */
+
+.manifesto-mobile-static {
+  display: none;
+}
+
+@media (max-width: 820px) {
+  #manifesto .manifesto-final__text--desktop {
+    display: none !important;
+  }
+
+  #manifesto .manifesto-mobile-static {
+    display: block !important;
+
+    width: calc(100% - 24px) !important;
+    max-width: 720px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    font-family: inherit !important;
+    font-size: 27px !important;
+    line-height: 1.42 !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.01em !important;
+
+    text-align: center !important;
+    color: #f1f1ed !important;
+    -webkit-text-fill-color: #f1f1ed !important;
+
+    white-space: normal !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    text-wrap: pretty;
+  }
+}
+
+@media (max-width: 520px) {
+  #manifesto .manifesto-mobile-static {
+    width: calc(100% - 12px) !important;
+    font-size: 26px !important;
+    line-height: 1.4 !important;
+  }
+}
